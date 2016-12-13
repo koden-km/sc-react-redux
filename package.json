@@ -1,0 +1,20 @@
+{
+  "name": "sc-react-redux",
+  "version": "1.0.0",
+  "description": "Learning React + Redux: http://robinwieruch.de/the-soundcloud-client-in-react-redux/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koden-km/sc-react-redux.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koden-km/sc-react-redux/issues"
+  },
+  "homepage": "https://github.com/koden-km/sc-react-redux#readme"
+}
