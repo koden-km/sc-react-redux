@@ -1,4 +1,4 @@
-import * as actionsTypes from '../constants/actionTypes';
+import * as actionTypes from '../constants/actionTypes';
 
 export function setTracks(tracks) {
     return {
