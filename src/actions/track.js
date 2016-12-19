@@ -1,3 +1,4 @@
+// TODO: Change this to FSA. Eg. The imbedded object gets set on a 'payload' key.
 import * as actionTypes from '../constants/actionTypes';
 
 export function setTracks(tracks) {
@@ -6,3 +7,10 @@ export function setTracks(tracks) {
         tracks
     };
 };
+
+export function playTrack(track) {
+    return {
+        type: actionTypes.TRACK_PLAY,
+        track
+    };
+}

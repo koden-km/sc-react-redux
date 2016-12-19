@@ -53,12 +53,14 @@ function fetchStream(session) {
             collection: [
                 {
                     origin: {
-                        title: 'Some track'
+                        title: 'Some track',
+                        stream_url: 'some-url/some-track'
                     }
                 },
                 {
                     origin: {
-                        title: 'Some other track'
+                        title: 'Some other track',
+                        stream_url: 'some-url/some-other-track'
                     }
                 }
             ]
