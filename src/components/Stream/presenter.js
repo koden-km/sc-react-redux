@@ -41,13 +41,23 @@ class Stream extends Component {
                 <div>
                     {
                         tracks.map((track, key) => {
-                            return (
-                                <div className="track" key={key}>
-                                    {track.origin.title}
-                                    &nbsp;
-                                    <button type="button" onClick={() => onPlay(track)}>Play</button>
-                                </div>
-                            );
+                            if (activeTrack !== track) {
+                                return(
+                                    <div className="track" key={key}>
+                                        {track.origin.title}
+                                        &nbsp;
+                                        <button type="button" onClick={() => onPlay(track)}>Play</button>
+                                    </div>
+                                );
+                            } else {
+                                return(
+                                    <div className="track" key={key}>
+                                        {track.origin.title}
+                                        &nbsp;
+                                        <button type="button" onClick={() => onPlay(null)}>Stop</button>
+                                    </div>
+                                );
+                            }
                         })
                     }
                 </div>
