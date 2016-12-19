@@ -7,6 +7,11 @@ module.exports = {
         './src/index.js'
     ],
     module: {
+        preLoaders: [{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'eslint-loader'
+        }],
         loaders: [{
             test: /\.jsx?$/,
             exclude: /node_modules/,
@@ -25,6 +30,9 @@ module.exports = {
         contentBase: './dist',
         hot: true,
         historyApiFallback: true
+    },
+    eslint: {
+        configFile: './.eslintrc'
     },
     plugins: [
         new webpack.ProvidePlugin({
