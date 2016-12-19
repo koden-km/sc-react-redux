@@ -1,4 +1,4 @@
-var wepack = require('webpack');
+var webpack = require('webpack');
 
 module.exports = {
     entry: [
