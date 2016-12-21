@@ -1,8 +1,8 @@
-import { auth } from './auth';
-import { setTracks, playTrack } from './track';
+import { authAction } from './authActions';
+import { setTracksAction, playTrackAction } from './trackActions';
 
 export {
-    auth,
-    setTracks,
-    playTrack
+    authAction,
+    setTracksAction,
+    playTrackAction
 };

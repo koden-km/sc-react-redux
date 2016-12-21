@@ -1,9 +1,11 @@
-// Note to self: This is a "presentation" type component.
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { CLIENT_ID } from '../../constants/auth';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { CLIENT_ID } from '../../constants/authConstants';
+import * as actions from '../../actions';
 
-class Stream extends Component {
+export class Stream extends Component {
 
     componentDidUpdate() {
         const audioElement = ReactDOM.findDOMNode(this.refs.audio);
@@ -76,4 +78,25 @@ class Stream extends Component {
 
 }
 
-export default Stream;
+function mapStateToProps(state) {
+    // const { user } = state.auth;
+    // const { user } = state.authReducers;
+    // const { user } = state.user;
+    const { user } = state.auth.user;
+
+    const { tracks, activeTrack } = state.track;
+    return {
+        user,
+        tracks,
+        activeTrack
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        onAuth: bindActionCreators(actions.authAction, dispatch),
+        onPlay: bindActionCreators(actions.playTrackAction, dispatch)
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Stream);

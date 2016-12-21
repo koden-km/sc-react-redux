@@ -1,4 +1,3 @@
-// TODO: Change this to FSA. Eg. The action object gets from a 'payload' key.
 import * as actionTypes from '../constants/actionTypes';
 
 const initialState = {
@@ -9,19 +8,19 @@ const initialState = {
 export default function(state = initialState, action) {
     switch (action.type) {
         case actionTypes.TRACKS_SET:
-            return setTracks(state, action);
+            return setTracksReducer(state, action);
         case actionTypes.TRACK_PLAY:
-            return setPlay(state, action);
+            return setPlayReducer(state, action);
     }
     return state;
 }
 
-function setTracks(state, action) {
-    const { tracks } = action;
+function setTracksReducer(state, action) {
+    const { tracks } = action.payload;
     return { ...state, tracks };
 }
 
-function setPlay(state, action) {
-    const { track } = action;
+function setPlayReducer(state, action) {
+    const { track } = action.payload;
     return { ...state, activeTrack: track };
 }
